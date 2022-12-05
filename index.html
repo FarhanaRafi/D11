@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="index.js"></script>
+</head>
+<body>
+
+    <div>
+    <h1>ABC Mobiles</h1>
+    <button onclick="changeHeading('Checkout our Store in online')">Change H1</button><br>
+    <button onclick="changeBGColor()">Change BG-Color</button><br>
+    <button onclick="clickLink()">Click on Link</button><br>
+    <button onclick="hideAllImages()">Image invisible</button><br>
+    <button onclick="changeAddress('10, hebelstrfreidberg')">new Address</button><br>
+    <button onclick="changePriceColor()">Change Price Color</button></div>
+    <table border="1">
+    <tr>
+        <th>S.No</th>
+        <th>Image</th>
+        <th>Title</th>
+        <th>Description</th>
+        <th>Price</th>
+        <th>Links</th>
+    </tr>
+    <tr>
+        <td>Product 1</td>
+        <td><img class = "mobiles" src="assets\img1.jpg" alt="samsung"></td>
+        <td>Samsung</td>
+        <td>Weight:	189 g (6.67 oz) <br>
+            Size: 6.5 inches, 102.0 cm2 </td>
+         <td class="price">$ 400</td>  
+         <td> <a href="https://www.amazon.de/-/en/Samsung-Smartphone-Infinity-Internal-Expandable%C2%B2/dp/B09SHV78TN/ref=sr_1_2?keywords=samsung%2Ba53&qid=1670243823&sprefix=samsung%2Ba%2Caps%2C100&sr=8-2&th=1">clickme</a></td> 
+    </tr>
+    <tr>
+        <td>Product 2</td>
+        <td><img class = "mobiles" src="assets\img2.jpg" alt="pixel"></td>
+        <td>Googl Pixel</td>
+        <td>Weight:	170 g (6.9 oz) <br>
+            Size: 6.5 inches, 102.0 cm2 </td>
+         <td class="price">$ 900</td>  
+         <td> <a href="https://www.amazon.de/Google-Pixel-Pro-Smartphone-Telephoto/dp/B0BDK2CZ8N/ref=sr_1_1_sspa?crid=C50IYN3LETYP&keywords=google+pixel+7+handy&qid=1670244138&sprefix=google+pixel+7+handy%2Caps%2C100&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">clickme</a></td> 
+    </tr>
+    <tr>
+        <td>Product 3</td>
+        <td><img class = "mobiles" src="assets\img3.jpg" alt="pixel"></td>
+        <td>iPhone 14pro</td>
+        <td>Weight:	200 g (7.67 oz) <br>
+            Size: 6.5 inches, 102.0 cm2 </td>
+         <td class="price">$ 1500</td>  
+         <td> <a href="https://www.amazon.de/MQ2N3ZD-A/dp/B0BDJM988F/ref=sr_1_2_sspa?keywords=iphone+14&qid=1670244269&sprefix=iphone%2Caps%2C104&sr=8-2-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">clickme</a></td> 
+    </tr>
+    <tr>
+        <td>Product 4</td>
+        <td><img class = "mobiles" src="assets\img4.jpg" alt="pixel"></td>
+        <td>Sony</td>
+        <td>Weight:	160 g (6.6 oz) <br>
+            Size: 7.5 inches, 102.0 cm2 </td>
+         <td class="price">$ 800</td>  
+         <td> <a href="https://www.amazon.de/Smartphone-Display-Optical-Warranty-Exclusive/dp/B0BBSC1K8Z/ref=sr_1_1_sspa?keywords=sony+handy&qid=1670244401&sprefix=sony+mo%2Caps%2C100&sr=8-1-spons&sp_csd=d2lkZ2V0TmFtZT1zcF9hdGY&psc=1">clickme</a></td> 
+    </tr>
+    <tr>
+        <td>Product 5</td>
+        <td><img class = "mobiles" src="assets\img5.jpg" alt="pixel"></td>
+        <td>Oppo</td>
+        <td>Weight:	190 g (6.9 oz) <br>
+            Size: 6.5 inches, 102.0 cm2 </td>
+         <td class="price">$ 500</td>  
+         <td> <a href="https://www.amazon.de/-/en/Smartphone-Display-Internal-Memory-Triple/dp/B08823WCB9/ref=sr_1_11?crid=2OMKD5PFZRE0S&keywords=oppo+handy&qid=1670244496&sprefix=oppo+mo%2Caps%2C111&sr=8-11">clickme</a></td> 
+    </tr>
+</table>
+<p ><h4>Message me:</h4>
+<input class="msg" type="text" placeholder="message"><br>
+<button class="send">Send</button></p>
+<footer><hr>
+    <p>ABC Mobiles <br>
+    10,Holderlinstr., Berlin</p>
+    </hr>
+
+</footer>
+<script>
+    function changeHeading(newtitle){
+    let h1Node = document.querySelector("h1");
+    h1Node.innerText = newtitle;
+}
+    function changeBGColor(){
+        document.body.style.backgroundColor = "olive";
+}
+
+function changeAddress(newAddress){
+    let footerNode = document.getElementsByTagName("footer")[0]
+    footerNode.innerText = newAddress
+}
+
+function clickLink(){
+    let className = document.getElementsByTagName('a')
+    for(let i = 0; i < className.length; i++){
+        let linkNode = className[i];
+        linkNode.classList.add("linkcss")
+    }
+}
+function hideAllImages(){
+    let allImages = document.getElementsByTagName("img")
+    for(let i = 0; i < allImages.length; i++){
+        let image = allImages[i]
+        image.classList.toggle("imgvisibility")
+    }
+}
+
+function changePriceColor() {
+    let colors = ["red", "blue", "green", "yellow", "black", "magenta"]
+    let selectedColor = colors[Math.floor(Math.random()*7)]
+    let allPrices = document.getElementsByClassName("price")
+    for(let i = 0; i < allPrices.length; i++){
+        let price = allPrices[i]
+        price.style.color = selectedColor
+    }
+}
+
+</script>
+    
+</body>
+</html>
